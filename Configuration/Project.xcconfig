@@ -35,7 +35,7 @@ VALID_ARCHS[sdk=macosx*] = i386 x86_64
 //
 // tvOS-specific settings
 //
-TVOS_DEPLOYMENT_TARGET = 9.0
+TVOS_DEPLOYMENT_TARGET = 12.4
 
 SDKROOT[arch=arm64] = appletvos
 SDKROOT[arch=x86_64] = appletvsimulator
