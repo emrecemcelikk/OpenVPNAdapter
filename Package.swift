@@ -6,6 +6,7 @@ let package = Package(
     name: "OpenVPNAdapter",
     platforms: [
         .iOS("9.0"),
+        .tvOS("12.4"),
         .macOS("10.11"),
     ],
     products: [
