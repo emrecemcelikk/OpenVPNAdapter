@@ -1,5 +1,6 @@
-SUPPORTED_PLATFORMS = iphoneos iphonesimulator macosx
-TARGETED_DEVICE_FAMILY = 1,2
+SUPPORTED_PLATFORMS = iphoneos iphonesimulator macosx appletvos appletvsimulator
+
+TARGETED_DEVICE_FAMILY = 1,2,3
 
 HEADER_SEARCH_PATHS = $(inherited) $(SRCROOT)/Sources/OpenVPNAdapter/include $(SRCROOT)/Sources/OpenVPNClient/include $(SRCROOT)/Sources/LZ4/include $(SRCROOT)/Sources/mbedTLS/include $(SRCROOT)/Sources/ASIO/asio/include $(SRCROOT)/Sources/OpenVPN3
 
@@ -29,3 +30,15 @@ SDKROOT[arch=i386] = macosx
 SDKROOT[arch=x86_64] = macosx
 
 VALID_ARCHS[sdk=macosx*] = i386 x86_64
+
+////////////////////////////////////////////////////////////////////////////////
+//
+// tvOS-specific settings
+//
+TVOS_DEPLOYMENT_TARGET = 9.0
+
+SDKROOT[arch=arm64] = appletvos
+SDKROOT[arch=x86_64] = appletvsimulator
+
+VALID_ARCHS[sdk=appletvos*] = arm64
+VALID_ARCHS[sdk=appletvsimulator*] = x86_64
