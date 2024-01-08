@@ -71,6 +71,12 @@ namespace openvpn {
     // meaning that a different app will get a different UUID from this call
     const NSString *uuid = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     return std::string([uuid UTF8String]);
+#elif defined(TARGET_OS_TV)
+    // tvOS-specific code to generate a UUID-like identifier
+    // This is a simple example, and you may want to use a more sophisticated method
+    // to generate a unique identifier for tvOS.
+    const std::string tvosIdentifier = "tvos_" + std::to_string(std::hash<std::string>{}("your_custom_salt_for_tvos"));
+    return tvosIdentifier;
 #endif
     return std::string();
   }
